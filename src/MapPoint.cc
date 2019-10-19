@@ -270,9 +270,13 @@ void MapPoint::ComputeDistinctiveDescriptors()
         return;
 
     // Compute distances between them
-    const size_t N = vDescriptors.size();
+    size_t N = vDescriptors.size();
 
-    float Distances[N][N];
+    //float Distances[N][N];
+
+	float** Distances = new float* [N];
+	for (int i = 0; i < N; i++)
+		Distances[i] = new float[N];
     for(size_t i=0;i<N;i++)
     {
         Distances[i][i]=0;
@@ -304,6 +308,7 @@ void MapPoint::ComputeDistinctiveDescriptors()
         unique_lock<mutex> lock(mMutexFeatures);
         mDescriptor = vDescriptors[BestIdx].clone();
     }
+	delete[] Distances;
 }
 
 cv::Mat MapPoint::GetDescriptor()

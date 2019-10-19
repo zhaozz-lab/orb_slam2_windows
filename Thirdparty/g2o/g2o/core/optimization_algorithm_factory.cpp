@@ -102,7 +102,7 @@ namespace g2o {
   {
     size_t solverNameColumnLength = 0;
     for (CreatorList::const_iterator it = _creator.begin(); it != _creator.end(); ++it)
-      solverNameColumnLength = std::max(solverNameColumnLength, (*it)->property().name.size());
+      solverNameColumnLength = std::fmax(solverNameColumnLength, (*it)->property().name.size());
     solverNameColumnLength += 4;
 
     for (CreatorList::const_iterator it = _creator.begin(); it != _creator.end(); ++it) {

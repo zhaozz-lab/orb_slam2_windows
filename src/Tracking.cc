@@ -1509,7 +1509,7 @@ void Tracking::Reset()
     {
         mpViewer->RequestStop();
         while(!mpViewer->isStopped())
-            usleep(3000);
+            Sleep(3000);
     }
 
     // Reset Local Mapping
