@@ -22,7 +22,7 @@ build/
 *~
 lib/
 Thirdparty/DBoW2
-Thirdparty/Pangolin-master/
+# Thirdparty/Pangolin-master/
 Thirdparty/g2o/bin/
 Thirdparty/g2o/eigen-eigen-ca142d0540d3.zip
 Thirdparty/g2o/eigen/
